@@ -1,3 +1,4 @@
+/* Variables */
 :root {
     --primary-color: #4c662b;
     --secondary-color: #586249;
@@ -8,10 +9,7 @@
     --text-surface-color: #000000;
 }
 
-h2 {
-    color: var(--secondary-color);
-}
-
+/* Base Styles */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -19,6 +17,11 @@ body {
     color: var(--text-primary-color);
 }
 
+h2 {
+    color: var(--secondary-color);
+}
+
+/* Header Styles */
 header {
     background-color: var(--primary-color);
     color: var(--text-secondary-color);
@@ -27,20 +30,23 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 header .logo {
     display: flex;
     align-items: center;
 }
+
 header .logo img {
     width: 150px;
-
     margin-right: 10px;
 }
+
 header nav {
     margin-right: 10px;
     display: flex;
     align-items: center;
 }
+
 header nav a {
     color: var(--text-secondary-color);
     text-decoration: none;
@@ -48,9 +54,53 @@ header nav a {
     font-size: 16px;
     transition: color 0.3s;
 }
+
 header nav a:hover {
     color: var(--background-color);
 }
+
+/* Main Content Layout */
+main {
+    padding: 20px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+#main-content {
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
+    line-height: 1.5rem;
+}
+
+/* Sidebar Styles */
+aside {
+    flex: -1;
+    text-align: center;
+}
+
+aside div img {
+    width: 200px;
+}
+
+aside div table th,
+aside div table td {
+    text-align: left;
+    padding: 0.3em;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-secondary-color);
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Component Styles */
 .card {
     background-color: var(--surface-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -61,43 +111,45 @@ header nav a:hover {
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
 }
-  
-#main-content {
-    flex: 5;
-   
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 1rem 2rem;
-    line-height: 1.5rem;
-  }
-   
-aside {
-    flex: -1;
-    text-align: center;
-    /* width: 30em; */
-  }
 
-aside div img {
-    width: 200px;
+/* Typography */
+.main-title {
+    font-size: 32pt;
 }
 
-aside div table th, td {
-    text-align: left;
-    padding: 0.3em;
-    
+.footer-text {
+    margin-left: 20px;
 }
 
-  /* aside div table td {
-    text-align: left;
-  } */
-
-main {
-    padding: 20px;
-
-    display: flex;
-    gap: 1.5rem;
+.footer-author {
+    margin-right: 20px;
 }
 
+.footer-link {
+    font-style: normal;
+    color: whitesmoke;
+}
+
+.small-text {
+    font-size: small;
+    font-style: italic;
+    color: gray;
+}
+
+/* Media Elements */
+figure {
+    margin: 0;
+}
+
+figcaption {
+    padding: 14px;
+}
+
+table {
+    justify-content: center;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 1000px) {
     main {
         flex-flow: column nowrap;
@@ -107,13 +159,4 @@ main {
         align-self: center;
         order: -1;
     }
-}
-
-footer {
-    background-color: var(--primary-color);
-    color: var(--text-secondary-color);
-    padding: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
